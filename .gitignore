@@ -1,0 +1,14 @@
+# Node
+node_modules/
+.env*
+
+# Elixir
+/_build/
+/dep/
+/priv/static/
+/tmp/
+
+# Others
+docker-compose.override.yml
+.DS_Store
+
