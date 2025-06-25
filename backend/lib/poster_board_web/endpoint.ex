@@ -21,5 +21,7 @@ defmodule PosterBoardWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, store: :cookie, key: "_poster_board_key", signing_salt: "salt"
 
+  plug CORSPlug, origin: [System.get_env("CORS_ORIGIN") || "*"]
+
   plug PosterBoardWeb.Router
 end
