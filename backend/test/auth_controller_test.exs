@@ -2,8 +2,8 @@ defmodule PosterBoardWeb.AuthControllerTest do
   use ExUnit.Case, async: true
   use Plug.Test
 
-  alias PosterBoardWeb.Router
   alias PosterBoard.Repo
+  alias PosterBoardWeb.Router
 
   setup do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo)

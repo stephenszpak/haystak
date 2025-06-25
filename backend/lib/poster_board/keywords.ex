@@ -1,8 +1,8 @@
 defmodule PosterBoard.Keywords do
   @moduledoc "Manage user search keywords"
   import Ecto.Query
-  alias PosterBoard.Repo
   alias PosterBoard.Keywords.Keyword
+  alias PosterBoard.Repo
   alias PosterBoard.Users.User
 
   def list_keywords(%User{id: user_id}) do

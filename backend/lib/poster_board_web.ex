@@ -1,4 +1,7 @@
 defmodule PosterBoardWeb do
+  @moduledoc """
+  Entry point for web components such as controllers and views.
+  """
   def controller do
     quote do
       use Phoenix.Controller, namespace: PosterBoardWeb

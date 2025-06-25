@@ -1,4 +1,7 @@
 defmodule PosterBoard.Events.Event do
+  @moduledoc """
+  Ecto schema representing a calendar event.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

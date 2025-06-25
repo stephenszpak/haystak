@@ -1,5 +1,9 @@
 defmodule PosterBoardWeb.JobController do
+  @moduledoc """
+  Handles job related HTTP actions.
+  """
   use PosterBoardWeb, :controller
+  alias PosterBoard.JobFeed.LinkedIn
 
   @doc """
   Stream job postings from LinkedIn using Server-Sent Events (SSE).
@@ -13,7 +17,7 @@ defmodule PosterBoardWeb.JobController do
       |> Map.get("keywords", "")
       |> String.split(",", trim: true)
 
-    jobs = PosterBoard.JobFeed.LinkedIn.fetch_jobs(keywords)
+    jobs = LinkedIn.fetch_jobs(keywords)
 
     conn =
       conn

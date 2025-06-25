@@ -1,4 +1,7 @@
 defmodule PosterBoard.Jobs.Job do
+  @moduledoc """
+  Ecto schema representing a job posting.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
