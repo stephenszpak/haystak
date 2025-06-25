@@ -5,13 +5,10 @@ config :poster_board,
 
 config :poster_board, PosterBoardWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: PosterBoardWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: PosterBoard.PubSub
+  render_errors: [view: PosterBoardWeb.ErrorView, accepts: ~w(json), layout: false]
   # LiveView is currently not used. If enabled in the future, configure its
   # signing salt here.
   # live_view: [signing_salt: "SECRET"]
-
-config :phoenix_swagger, json_library: Jason
 
 config :logger, level: :info
 

@@ -16,5 +16,3 @@ config :poster_board, PosterBoardWeb.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE") || "SECRET",
   watchers: []
 
-config :phoenix_swagger, PosterBoardWeb.Endpoint,
-  swagger_files: %{"priv/static/swagger.json" => [router: PosterBoardWeb.Router]}
