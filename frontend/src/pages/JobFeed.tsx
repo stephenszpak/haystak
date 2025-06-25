@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import JobCard from '../components/JobCard';
 import { useSSE } from '../hooks/useSSE';
 import { TextField, Button, Chip, Box } from '@mui/material';
@@ -8,9 +8,34 @@ export default function JobFeed() {
   const { keywords, addKeyword, removeKeyword } = useKeywords();
   const [input, setInput] = useState('');
   const query = keywords.map((k) => k.word).join(',');
-  const job = useSSE<any>(
+  const newJob = useSSE<any>(
     `${import.meta.env.VITE_API_URL}/api/jobs/stream?keywords=${encodeURIComponent(query)}`,
   );
+
+  const [jobs, setJobs] = useState<any[]>([]);
+  const [index, setIndex] = useState(0);
+
+  // Reset job list when the query changes
+  useEffect(() => {
+    setJobs([]);
+    setIndex(0);
+  }, [query]);
+
+  // Append new jobs from SSE
+  useEffect(() => {
+    if (newJob) {
+      setJobs((prev) => [...prev, newJob]);
+    }
+  }, [newJob]);
+
+  // Cycle through jobs every 5 seconds
+  useEffect(() => {
+    if (jobs.length === 0) return;
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % jobs.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [jobs]);
 
   const handleAdd = () => {
     if (input.trim()) {
@@ -43,7 +68,7 @@ export default function JobFeed() {
           <Chip key={k.id} label={k.word} onDelete={() => removeKeyword(k.id)} sx={{ mr: 1, mb: 1 }} />
         ))}
       </Box>
-      <JobCard job={job} />
+      <JobCard job={jobs[index]} />
     </Box>
   );
 }
