@@ -1,6 +1,8 @@
 defmodule PosterBoard.Keywords.Keyword do
+  @moduledoc false
   use Ecto.Schema
   import Ecto.Changeset
+  @derive {Jason.Encoder, only: [:id, :word]}
 
   schema "keywords" do
     field :word, :string
