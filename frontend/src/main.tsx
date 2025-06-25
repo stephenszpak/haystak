@@ -13,7 +13,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ColorModeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/jobs" element={<JobFeed />} />
           <Route path="/login" element={<Login />} />
