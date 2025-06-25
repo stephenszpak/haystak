@@ -2,10 +2,15 @@ import React from 'react';
 import { Card, CardContent, Grid } from '@mui/material';
 import JobFeed from './JobFeed';
 import Calendar from './Calendar';
+import Navbar from '../components/Navbar';
+import { useCurrentUser } from '../hooks/useCurrentUser';
 
 export default function Dashboard() {
+  const user = useCurrentUser();
   return (
-    <Grid container spacing={2} sx={{ mt: 2 }}>
+    <>
+      <Navbar user={user} />
+      <Grid container spacing={2} sx={{ mt: 2 }}>
       <Grid item xs={12} md={6}>
         <Card>
           <CardContent>
@@ -20,6 +25,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </Grid>
-    </Grid>
+      </Grid>
+    </>
   );
 }

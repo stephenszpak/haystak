@@ -3,6 +3,8 @@ defmodule PosterBoard.Users do
   alias PosterBoard.Repo
   alias PosterBoard.Users.User
 
+  def get_user(id) when is_integer(id), do: Repo.get(User, id)
+
   def get_user_by_email(email) when is_binary(email) do
     Repo.get_by(User, email: email)
   end
