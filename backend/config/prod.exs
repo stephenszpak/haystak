@@ -1,6 +1,6 @@
 import Config
 
-database_url = System.get_env("DATABASE_URL") || "ecto://postgres:postgres@localhost:5432/haystak"
+database_url = System.get_env("DATABASE_URL") || "ecto://postgres:postgres@db:5432/poster_board_dev"
 
 config :poster_board, PosterBoard.Repo,
   url: database_url,
