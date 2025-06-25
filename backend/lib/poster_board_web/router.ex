@@ -2,7 +2,7 @@ defmodule PosterBoardWeb.Router do
   use PosterBoardWeb, :router
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json", "event-stream"]
   end
 
   scope "/", PosterBoardWeb do

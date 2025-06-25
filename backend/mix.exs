@@ -34,6 +34,8 @@ defmodule PosterBoard.MixProject do
       {:plug_cowboy, "~> 2.6"},
       {:jason, "~> 1.4"},
       {:cors_plug, "~> 3.0"},
+      {:req, "~> 0.4"},
+      {:floki, "~> 0.34"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
