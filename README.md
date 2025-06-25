@@ -28,6 +28,7 @@ cd ../frontend && npm test -- --watchAll=false
 ## Adding a Feed Adapter
 
 Implement a module under `PosterBoard.JobFeed` that fetches jobs from a new source and returns standardized job structs.
+Adapters for LinkedIn, Indeed and Glassdoor are provided as examples.
 
 ## Skeptical Checklist
 

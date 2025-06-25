@@ -13,7 +13,7 @@ defmodule PosterBoard.JobFeed.LinkedIn do
   Fetch jobs matching the given keywords.
 
   `keywords` can be either a list of words or a single string. Returns a list of
-  maps with `:title`, `:company` and `:url` keys.
+  maps with `:title`, `:company`, `:location`, `:summary` and `:url` keys.
   """
   def fetch_jobs(keywords) when is_list(keywords) do
     keywords
@@ -39,6 +39,8 @@ defmodule PosterBoard.JobFeed.LinkedIn do
       %{
         title: li |> Floki.find("h3") |> Floki.text() |> String.trim(),
         company: li |> Floki.find(".base-search-card__subtitle") |> Floki.text() |> String.trim(),
+        location: li |> Floki.find(".job-search-card__location") |> Floki.text() |> String.trim(),
+        summary: li |> Floki.find(".job-search-card__snippet") |> Floki.text() |> String.trim(),
         url: li |> Floki.find("a") |> Floki.attribute("href") |> List.first()
       }
     end)

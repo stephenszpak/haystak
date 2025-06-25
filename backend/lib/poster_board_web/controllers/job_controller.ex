@@ -3,21 +3,26 @@ defmodule PosterBoardWeb.JobController do
   Handles job related HTTP actions.
   """
   use PosterBoardWeb, :controller
-  alias PosterBoard.JobFeed.LinkedIn
+  alias PosterBoard.JobFeed.{LinkedIn, Indeed, Glassdoor}
 
   @doc """
-  Stream job postings from LinkedIn using Server-Sent Events (SSE).
+  Stream job postings from multiple sources using Server-Sent Events (SSE).
 
   Optional query parameter `keywords` may be provided as a comma separated list
-  which will be used to filter LinkedIn results.
+  which will be used to filter the results. If no keywords are supplied,
+  a default search for software and web development jobs is used.
   """
   def stream(conn, params) do
     keywords =
       params
       |> Map.get("keywords", "")
       |> String.split(",", trim: true)
+      |> default_keywords()
 
-    jobs = LinkedIn.fetch_jobs(keywords)
+    jobs =
+      LinkedIn.fetch_jobs(keywords) ++
+        Indeed.fetch_jobs(keywords) ++
+        Glassdoor.fetch_jobs(keywords)
 
     conn =
       conn
@@ -33,4 +38,7 @@ defmodule PosterBoardWeb.JobController do
       end
     end)
   end
+
+  defp default_keywords([]), do: ["software development", "web development"]
+  defp default_keywords(list), do: list
 end
