@@ -1,16 +1,16 @@
-defmodule JobHuntWeb.Router do
-  use JobHuntWeb, :router
+defmodule PosterBoardWeb.Router do
+  use PosterBoardWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/", JobHuntWeb do
+  scope "/", PosterBoardWeb do
     pipe_through :api
     get "/health", HealthController, :index
   end
 
-  scope "/api", JobHuntWeb do
+  scope "/api", PosterBoardWeb do
     pipe_through :api
     get "/swagger", SwaggerController, :swagger_json
   end

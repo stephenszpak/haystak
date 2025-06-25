@@ -1,9 +1,9 @@
-defmodule JobHunt.MixProject do
+defmodule PosterBoard.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :job_hunt,
+      app: :poster_board,
       version: "0.1.0",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -16,7 +16,7 @@ defmodule JobHunt.MixProject do
 
   def application do
     [
-      mod: {JobHunt.Application, []},
+      mod: {PosterBoard.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

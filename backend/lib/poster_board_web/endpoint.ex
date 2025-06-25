@@ -1,11 +1,11 @@
-defmodule JobHuntWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :job_hunt
+defmodule PosterBoardWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :poster_board
 
   socket "/socket", Phoenix.LiveView.Socket
 
   plug Plug.Static,
     at: "/",
-    from: :job_hunt,
+    from: :poster_board,
     gzip: false
 
   plug Plug.RequestId
@@ -17,7 +17,7 @@ defmodule JobHuntWeb.Endpoint do
 
   plug Plug.MethodOverride
   plug Plug.Head
-  plug Plug.Session, store: :cookie, key: "_job_hunt_key", signing_salt: "salt"
+  plug Plug.Session, store: :cookie, key: "_poster_board_key", signing_salt: "salt"
 
-  plug JobHuntWeb.Router
+  plug PosterBoardWeb.Router
 end

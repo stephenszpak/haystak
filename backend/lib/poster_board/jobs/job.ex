@@ -1,4 +1,4 @@
-defmodule JobHunt.Jobs.Job do
+defmodule PosterBoard.Jobs.Job do
   use Ecto.Schema
   import Ecto.Changeset
 

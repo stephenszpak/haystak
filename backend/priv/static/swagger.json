@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0",
-    "title": "Job Hunt API"
+    "title": "Poster Board API"
   },
   "paths": {
     "/health": {

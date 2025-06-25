@@ -1,7 +1,7 @@
-defmodule JobHuntWeb.HealthControllerTest do
+defmodule PosterBoardWeb.HealthControllerTest do
   use ExUnit.Case, async: true
   use Plug.Test
-  alias JobHuntWeb.Router
+  alias PosterBoardWeb.Router
 
   test "GET /health" do
     conn = conn(:get, "/health")
