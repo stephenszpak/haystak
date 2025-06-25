@@ -1,4 +1,4 @@
-defmodule JobHunt.JobFeed do
+defmodule PosterBoard.JobFeed do
   @moduledoc """
   Polls external job boards and streams new postings.
   """

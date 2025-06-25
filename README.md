@@ -1,4 +1,4 @@
-# Job Hunt Dashboard
+# Poster Board Dashboard
 
 This is a starter kit for a personal productivity app with Elixir/Phoenix API and React/MUI frontend.
 
@@ -22,11 +22,11 @@ cd ../frontend && npm test -- --watchAll=false
 
 ## CalDAV Stub
 
-`JobHunt.CalendarSync` is a placeholder for CalDAV/iCloud sync. Authentication may require app-specific passwords if using two-factor authentication.
+`PosterBoard.CalendarSync` is a placeholder for CalDAV/iCloud sync. Authentication may require app-specific passwords if using two-factor authentication.
 
 ## Adding a Feed Adapter
 
-Implement a module under `JobHunt.JobFeed` that fetches jobs from a new source and returns standardized job structs.
+Implement a module under `PosterBoard.JobFeed` that fetches jobs from a new source and returns standardized job structs.
 
 ## Skeptical Checklist
 

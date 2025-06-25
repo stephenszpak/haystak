@@ -1,9 +1,9 @@
-defmodule JobHuntWeb do
+defmodule PosterBoardWeb do
   def controller do
     quote do
-      use Phoenix.Controller, namespace: JobHuntWeb
+      use Phoenix.Controller, namespace: PosterBoardWeb
       import Plug.Conn
-      alias JobHuntWeb.Router.Helpers, as: Routes
+      alias PosterBoardWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -16,8 +16,8 @@ defmodule JobHuntWeb do
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/job_hunt_web/templates",
-        namespace: JobHuntWeb
+        root: "lib/poster_board_web/templates",
+        namespace: PosterBoardWeb
     end
   end
 

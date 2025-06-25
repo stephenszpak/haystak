@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(JobHunt.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(PosterBoard.Repo, :manual)

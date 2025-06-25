@@ -1,4 +1,4 @@
-defmodule JobHunt.Events.Event do
+defmodule PosterBoard.Events.Event do
   use Ecto.Schema
   import Ecto.Changeset
 

@@ -1,4 +1,4 @@
-defmodule JobHunt.CalendarSync do
+defmodule PosterBoard.CalendarSync do
   @moduledoc """
   Stub for future CalDAV/iCloud integration.
   Handles authentication, polling and event mapping.
