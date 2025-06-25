@@ -33,6 +33,7 @@ defmodule PosterBoard.MixProject do
       {:postgrex, "~> 0.17"},
       {:plug_cowboy, "~> 2.6"},
       {:jason, "~> 1.4"},
+      {:cors_plug, "~> 3.0"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
     ]

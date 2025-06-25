@@ -8,6 +8,7 @@ This is a starter kit for a personal productivity app with Elixir/Phoenix API an
 docker-compose up --build
 ```
 
+Copy `example.env` to `.env` and set `CORS_ORIGIN` to the frontend URL (default `http://localhost:3000`).
 The API will be available at `http://localhost:4000` and the frontend at `http://localhost:3000`.
 
 ## Tests
