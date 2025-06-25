@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=5
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - uses: erlef/setup-beam@v1
+        with:
+          elixir-version: '1.17'
+          otp-version: '26'
+      - run: mix deps.get
+        working-directory: backend
+      - run: mix credo --strict
+        working-directory: backend
+      - run: mix dialyzer --halt-exit-status
+        working-directory: backend
+      - run: mix test
+        working-directory: backend
+      - run: npm install
+        working-directory: frontend
+      - run: npm test -- --watchAll=false
+        working-directory: frontend
