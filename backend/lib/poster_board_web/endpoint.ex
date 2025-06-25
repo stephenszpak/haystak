@@ -1,7 +1,9 @@
 defmodule PosterBoardWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :poster_board
 
-  socket "/socket", Phoenix.LiveView.Socket
+  # The LiveView socket is disabled since we do not use LiveView in this
+  # project. If needed in the future, uncomment the line below.
+  # socket "/socket", Phoenix.LiveView.Socket
 
   plug Plug.Static,
     at: "/",
