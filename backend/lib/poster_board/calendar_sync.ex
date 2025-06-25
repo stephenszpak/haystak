@@ -5,7 +5,7 @@ defmodule PosterBoard.CalendarSync do
   """
 
   def sync_events(_user) do
-    # TODO: implement CalDAV sync
+    # Placeholder for CalDAV integration
     :ok
   end
 end

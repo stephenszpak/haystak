@@ -4,9 +4,10 @@ defmodule PosterBoardWeb.AuthControllerTest do
 
   alias PosterBoard.Repo
   alias PosterBoardWeb.Router
+  alias Ecto.Adapters.SQL.Sandbox
 
   setup do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo)
+    :ok = Sandbox.checkout(Repo)
   end
 
   test "POST /api/register creates a user" do

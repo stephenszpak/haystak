@@ -3,7 +3,7 @@ defmodule PosterBoardWeb.JobController do
   Handles job related HTTP actions.
   """
   use PosterBoardWeb, :controller
-  alias PosterBoard.JobFeed.{LinkedIn, Indeed, Glassdoor}
+  alias PosterBoard.JobFeed.{Glassdoor, Indeed, LinkedIn}
 
   @doc """
   Stream job postings from multiple sources using Server-Sent Events (SSE).
