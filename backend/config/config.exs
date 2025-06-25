@@ -10,6 +10,13 @@ config :poster_board, PosterBoardWeb.Endpoint,
   # signing salt here.
   # live_view: [signing_salt: "SECRET"]
 
+# Register the MIME type used for Server-Sent Events so that
+# `plug :accepts, ["json", "event-stream"]` properly negotiates
+# requests with the "text/event-stream" header.
+config :mime, :types, %{
+  "text/event-stream" => ["event-stream"]
+}
+
 config :logger, level: :info
 
 import_config "#{config_env()}.exs"
