@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import Dashboard from '../pages/Dashboard';
+import Login from '../pages/Login';
 
-test('renders dashboard', () => {
-  render(<Dashboard />);
-  expect(screen.getByText('Dashboard')).toBeInTheDocument();
+test('renders login page', () => {
+  render(<Login />);
+  expect(screen.getByText('Login')).toBeInTheDocument();
 });
