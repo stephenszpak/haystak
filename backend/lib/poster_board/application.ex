@@ -1,4 +1,7 @@
 defmodule PosterBoard.Application do
+  @moduledoc """
+  OTP application entry module.
+  """
   use Application
 
   def start(_type, _args) do

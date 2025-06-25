@@ -1,4 +1,7 @@
 defmodule PosterBoardWeb.AuthPlug do
+  @moduledoc """
+  Plug for authenticating API requests.
+  """
   import Plug.Conn
   alias PosterBoard.Users
   alias PosterBoardWeb.Endpoint

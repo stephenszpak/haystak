@@ -24,9 +24,8 @@ defmodule PosterBoard.JobFeed.LinkedIn do
   def fetch_jobs(keywords) when is_binary(keywords) do
     url = @endpoint <> "?keywords=" <> URI.encode(keywords)
 
-    with {:ok, %{status: 200, body: body}} <- Req.get(url) do
-      parse_html(body)
-    else
+    case Req.get(url) do
+      {:ok, %{status: 200, body: body}} -> parse_html(body)
       _ -> []
     end
   end

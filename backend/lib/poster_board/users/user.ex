@@ -1,4 +1,7 @@
 defmodule PosterBoard.Users.User do
+  @moduledoc """
+  Ecto schema for application users.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
