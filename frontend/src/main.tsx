@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Calendar from './pages/Calendar';
 import JobFeed from './pages/JobFeed';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import { ColorModeProvider } from './theme/ColorModeContext';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -14,6 +16,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<Dashboard />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/jobs" element={<JobFeed />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </ColorModeProvider>

@@ -12,6 +12,8 @@ defmodule PosterBoardWeb.Router do
 
   scope "/api", PosterBoardWeb do
     pipe_through :api
+    post "/register", AuthController, :register
+    post "/login", AuthController, :login
     get "/swagger", SwaggerController, :swagger_json
   end
 end
