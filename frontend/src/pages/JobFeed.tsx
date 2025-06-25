@@ -3,12 +3,9 @@ import JobCard from '../components/JobCard';
 import { useSSE } from '../hooks/useSSE';
 import { TextField, Button, Chip, Box } from '@mui/material';
 import { useKeywords } from '../hooks/useKeywords';
-import Navbar from '../components/Navbar';
-import { useCurrentUser } from '../hooks/useCurrentUser';
 
 export default function JobFeed() {
   const { keywords, addKeyword, removeKeyword } = useKeywords();
-  const user = useCurrentUser();
   const [input, setInput] = useState('');
   const query = keywords.map((k) => k.word).join(',');
   const job = useSSE<any>(
@@ -24,7 +21,6 @@ export default function JobFeed() {
 
   return (
     <Box>
-      <Navbar user={user} />
       <Box sx={{ display: 'flex', mb: 1 }}>
         <TextField
           label="Keyword"
