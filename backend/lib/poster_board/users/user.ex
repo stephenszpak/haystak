@@ -12,5 +12,6 @@ defmodule PosterBoard.Users.User do
     user
     |> cast(attrs, [:email, :encrypted_password])
     |> validate_required([:email])
+    |> unique_constraint(:email)
   end
 end
